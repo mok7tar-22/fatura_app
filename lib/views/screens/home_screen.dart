@@ -7,12 +7,11 @@ import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
-
+  static String routeName='homeScreen';
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(15, 24, 50, 1.0),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(

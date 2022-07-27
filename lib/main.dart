@@ -1,4 +1,7 @@
+import 'package:fatura/views/screens/el3ohda_screen.dart';
+import 'package:fatura/views/screens/elwared_screen.dart';
 import 'package:fatura/views/screens/home_screen.dart';
+import 'package:fatura/views/screens/masrofat_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,22 +16,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme: TextTheme(
+        scaffoldBackgroundColor: const Color.fromRGBO(15, 24, 50, 1.0),
+        textTheme: const TextTheme(
           headline1: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.white)
         ),
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:HomeScreen(),
+      initialRoute:HomeScreen.routeName,
+      routes: {
+        HomeScreen.routeName: (context) => const HomeScreen(),
+        MasrofatScreen.routeName:(context)=> const MasrofatScreen(),
+        ElwaredScreen.routeName:(context)=> const ElwaredScreen(),
+        El3ohdaScreen.routeName:(context)=> const El3ohdaScreen(),
+
+
+      },
     );
   }
 }
